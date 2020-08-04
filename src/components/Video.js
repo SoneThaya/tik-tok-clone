@@ -1,17 +1,18 @@
 import React, { useRef, useState } from 'react';
 import './Video.css'
+import VideoFooter from './VideoFooter'
 
 const Video = () => {
-  const [play, setPlay] = useState(false)
+  const [playing, setPlaying] = useState(false)
   const videoRef = useRef(null);
 
   const onVideoPress = () => {
-    if (play) {
+    if (playing) {
       videoRef.current.pause();
-      setPlay(false)
+      setPlaying(false)
     } else {
       videoRef.current.play()
-      setPlay(true)
+      setPlaying(true)
     }
   }
 
@@ -23,6 +24,7 @@ const Video = () => {
         onClick={onVideoPress}
         ref={videoRef}
         src="https://www.youtube.com/watch?v=-EmpJ0HdXpI"></video>
+      <VideoFooter />
     </div>
   )
 }

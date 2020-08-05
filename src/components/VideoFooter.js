@@ -1,10 +1,28 @@
 import React from 'react'
 import './VideoFooter.css'
+import MusicNoteIcon from "@material-ui/icons/MusicNote"
+import Ticker from "react-ticker"
 
 const VideoFooter = () => {
   return (
     <div className="videoFooter">
-      <h2>I am a footer</h2>
+      <div className="videoFooter__text">
+        <h3>@rafehqazi</h3>
+        <p>this is a description</p>
+        <div className="videoFooter__ticker">
+          <MusicNoteIcon className="videoFooter__icon" />
+          <Ticker mode="smooth">
+            {({ index }) => (
+              <>
+                <p>yo wahts up guys</p>
+              </>
+            )}
+          </Ticker>
+        </div>
+      </div>
+      <img
+        className="videoFooter__record"
+        src="https://static.thenounproject.com/png/934821-200.png" alt="record" />
     </div>
   )
 }
